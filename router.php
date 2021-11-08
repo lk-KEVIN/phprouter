@@ -22,6 +22,7 @@ function route($route, $path_to_include){
   $ROOT = $_SERVER['DOCUMENT_ROOT'];
   if($route == "/404"){
     include_once("$ROOT/$path_to_include");
+    http_response_code(404);
     exit();
   }  
   $request_url = filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL);
